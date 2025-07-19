@@ -3,355 +3,341 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tech Journey | BSc IT Student</title>
+    <title>Happy Birthday My Love ❤️</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Custom animations */
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap');
+        
+        .dancing-script {
+            font-family: 'Dancing Script', cursive;
+        }
+        
+        .poppins {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .heart {
+            animation: heartbeat 1.5s infinite;
+        }
+        
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            25% { transform: scale(1.1); }
+            50% { transform: scale(1); }
+            75% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0% { transform: translateY(0px); }
             50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
         }
         
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #f00;
+            opacity: 0;
         }
         
-        @keyframes typing {
-            from { width: 0; }
-            to { width: 100%; }
+        .photo-frame {
+            border: 15px solid #fff;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transform: rotate(-5deg);
+            transition: all 0.3s ease;
         }
         
-        .animate-float {
-            animation: float 4s ease-in-out infinite;
+        .photo-frame:hover {
+            transform: rotate(0deg) scale(1.05);
         }
         
-        .animate-pulse {
-            animation: pulse 2s ease-in-out infinite;
-        }
-        
-        .typing-animation {
-            overflow: hidden;
-            white-space: nowrap;
-            animation: typing 3.5s steps(40, end) forwards;
-        }
-        
-        .code-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
-        
-        .progress-bar {
-            transition: width 1.5s ease-in-out;
-        }
-        
-        .tech-icon:hover {
-            filter: drop-shadow(0 0 8px rgba(99, 102, 241, 0.8));
-            transform: scale(1.2);
-        }
-        
-        .gradient-text {
-            background: linear-gradient(90deg, #3b82f6, #8b5cf6, #ec4899);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
+        .message-box {
+            background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.8) 100%);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
         }
     </style>
 </head>
-<body class="bg-gray-900 text-gray-100 font-sans overflow-x-hidden">
-    <!-- Animated background particles -->
-    <div class="fixed inset-0 overflow-hidden opacity-20 z-0">
-        <div class="absolute top-0 left-0 w-2 h-2 bg-blue-400 rounded-full animate-float" style="animation-delay: 0s; top: 20%; left: 10%;"></div>
-        <div class="absolute top-0 left-0 w-3 h-3 bg-purple-400 rounded-full animate-float" style="animation-delay: 0.5s; top: 60%; left: 35%;"></div>
-        <div class="absolute top-0 left-0 w-2 h-2 bg-pink-400 rounded-full animate-float" style="animation-delay: 1s; top: 80%; left: 75%;"></div>
-        <div class="absolute top-0 left-0 w-3 h-3 bg-indigo-400 rounded-full animate-float" style="animation-delay: 1.5s; top: 40%; left: 85%;"></div>
-        <div class="absolute top-0 left-0 w-2 h-2 bg-blue-400 rounded-full animate-float" style="animation-delay: 2s; top: 15%; left: 65%;"></div>
-    </div>
+<body class="bg-gradient-to-br from-pink-100 via-purple-100 to-red-100 min-h-screen poppins overflow-x-hidden">
+    <!-- Music Player -->
+    <audio id="birthdaySong" loop>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+    </audio>
     
-    <!-- Main content -->
-    <div class="relative z-10">
-        <!-- Hero Section -->
-        <section class="min-h-screen flex flex-col justify-center items-center px-4 sm:px-6 lg:px-8 pt-16 md:pt-24 pb-12 md:pb-20">
-            <div class="text-center max-w-4xl mx-auto">
-                <h2 class="text-xl sm:text-3xl text-gray-300 mb-3 sm:mb-4">Hello, I'm <span class="font-bold text-blue-400">S.Menakan</span></h2>
-                <h1 class="text-2xl sm:text-5xl md:text-6xl font-bold mb-4 sm:mb-6 transform transition-all duration-500">
-                    <span class="gradient-text typing-animation">Welcome to My Tech Journey</span>
-                </h1>
-                <p class="text-base sm:text-2xl text-gray-300 mb-6 sm:mb-10 opacity-0 animate-fade-in" style="animation-delay: 3.5s; animation-fill-mode: forwards;">
-                    Aspiring <span class="font-bold text-blue-400">BSc IT Student</span> | Building the foundation for a <span class="font-bold text-purple-400">bright tech future</span>
-                </p>
-                <div class="flex flex-wrap justify-center gap-4">
-                    <button class="px-6 py-3 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-full font-semibold hover:from-indigo-600 hover:to-blue-500 transition-all transform hover:scale-105">
-                        <i class="fas fa-laptop-code mr-2"></i> My Projects
-                    </button>
-                    <button class="px-6 py-3 border-2 border-blue-400 text-blue-400 rounded-full font-semibold hover:bg-blue-400 hover:bg-opacity-10 transition-all transform hover:scale-105">
-                        <i class="fas fa-graduation-cap mr-2"></i> Learning Path
+    <!-- Confetti Container -->
+    <div id="confetti-container"></div>
+    
+    <!-- Main Content -->
+    <div class="container mx-auto px-4 py-12">
+        <!-- Header -->
+        <header class="text-center mb-12">
+            <h1 class="text-5xl md:text-7xl font-bold text-pink-600 dancing-script mb-4">
+                Happy Birthday <span class="heart text-red-500">❤️</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-700">To the most amazing girlfriend in the world!</p>
+        </header>
+        
+        <!-- Photo Section -->
+        <div class="flex justify-center mb-16">
+            <div class="photo-frame bg-white p-2 rounded-lg max-w-md floating">
+                <img id="couplePhoto" src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" 
+                     alt="Us together" class="w-full h-auto rounded-lg">
+                <div class="text-center mt-4">
+                    <button onclick="changePhoto()" class="bg-pink-500 hover:bg-pink-600 text-white px-4 py-2 rounded-full transition-all">
+                        <i class="fas fa-camera mr-2"></i>Change Photo
                     </button>
                 </div>
             </div>
-            
-            <div class="mt-10 md:mt-12 flex flex-col lg:flex-row items-center gap-6 md:gap-8 w-full max-w-6xl mx-auto px-2">
-                <!-- Profile Photo -->
-                <div class="w-40 h-40 sm:w-56 sm:h-56 lg:w-64 lg:h-64 rounded-full border-4 border-blue-400 overflow-hidden shadow-xl transform transition-all hover:scale-105">
-                    <img src="https://i.ibb.co/xqFJf3yC/Whats-App-Image-2025-01-30-at-21-50-25-231a265c.jpg" alt="S.Menakan" class="w-full h-full object-cover">
+        </div>
+        
+        <!-- Birthday Message -->
+        <div class="max-w-3xl mx-auto message-box p-8 mb-16 shadow-lg">
+            <h2 class="text-3xl font-bold text-pink-600 dancing-script mb-6 text-center">My Dearest Love,</h2>
+            <div class="text-gray-700 text-lg leading-relaxed space-y-4">
+                <p>On this special day, I want to remind you how incredibly lucky I am to have you in my life.</p>
+                <p>Your smile brightens my darkest days, your laugh is my favorite melody, and your love is the greatest gift I've ever received.</p>
+                <p>You're not just my girlfriend, you're my best friend, my partner in crime, and my soulmate. Every moment with you is a treasure I cherish deeply.</p>
+                <p>Today, I celebrate you - your kindness, your strength, your beauty (inside and out), and everything that makes you uniquely you.</p>
+                <p>I promise to keep making you smile, to be there through all of life's adventures, and to love you more with each passing day.</p>
+                <p class="text-center text-2xl font-bold text-pink-600 dancing-script mt-6">Happy Birthday, my love! ❤️</p>
+            </div>
+        </div>
+        
+        <!-- Memories Section -->
+        <div class="mb-16">
+            <h2 class="text-3xl font-bold text-center text-pink-600 dancing-script mb-8">Our Beautiful Memories</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white rounded-lg overflow-hidden shadow-lg transition-transform hover:scale-105">
+                    <img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" 
+                         alt="Memory 1" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg text-pink-600">Our First Date</h3>
+                        <p class="text-gray-600">Remember how nervous we both were?</p>
+                    </div>
                 </div>
+                <div class="bg-white rounded-lg overflow-hidden shadow-lg transition-transform hover:scale-105">
+                    <img src="https://images.unsplash.com/photo-1494774157365-9e04c6720e47?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" 
+                         alt="Memory 2" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg text-pink-600">That Surprise Trip</h3>
+                        <p class="text-gray-600">Your excitement was contagious!</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg overflow-hidden shadow-lg transition-transform hover:scale-105">
+                    <img src="https://images.unsplash.com/photo-1529257414772-1960b7bea4eb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" 
+                         alt="Memory 3" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg text-pink-600">Just Being Us</h3>
+                        <p class="text-gray-600">The simple moments are my favorite.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Interactive Section -->
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold text-pink-600 dancing-script mb-8">Make a Birthday Wish!</h2>
+            <div class="bg-white rounded-lg p-8 max-w-md mx-auto shadow-lg">
+                <div class="mb-6">
+                    <label for="wish" class="block text-gray-700 mb-2">Your Birthday Wish:</label>
+                    <textarea id="wish" class="w-full px-4 py-2 border border-pink-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500" rows="3" placeholder="Type your wish here..."></textarea>
+                </div>
+                <button onclick="makeWish()" class="bg-pink-500 hover:bg-pink-600 text-white px-6 py-3 rounded-full text-lg font-medium transition-all">
+                    <i class="fas fa-birthday-cake mr-2"></i> Make a Wish!
+                </button>
+            </div>
+        </div>
+        
+        <!-- Countdown to Celebration -->
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold text-pink-600 dancing-script mb-8">Countdown to Our Celebration!</h2>
+            <div class="flex justify-center space-x-4">
+                <div class="bg-white rounded-lg p-4 shadow-lg w-24">
+                    <div class="text-4xl font-bold text-pink-600" id="days">00</div>
+                    <div class="text-gray-600">Days</div>
+                </div>
+                <div class="bg-white rounded-lg p-4 shadow-lg w-24">
+                    <div class="text-4xl font-bold text-pink-600" id="hours">00</div>
+                    <div class="text-gray-600">Hours</div>
+                </div>
+                <div class="bg-white rounded-lg p-4 shadow-lg w-24">
+                    <div class="text-4xl font-bold text-pink-600" id="minutes">00</div>
+                    <div class="text-gray-600">Minutes</div>
+                </div>
+                <div class="bg-white rounded-lg p-4 shadow-lg w-24">
+                    <div class="text-4xl font-bold text-pink-600" id="seconds">00</div>
+                    <div class="text-gray-600">Seconds</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Video Section -->
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold text-pink-600 dancing-script mb-8">A Special Video For You</h2>
+            <div class="aspect-w-16 aspect-h-9 max-w-4xl mx-auto">
+                <iframe class="w-full h-96 rounded-lg shadow-xl" src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+                        title="YouTube video player" frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen></iframe>
+            </div>
+        </div>
 
-                <!-- Code Card -->
-                <div class="w-full max-w-xs sm:max-w-md md:max-w-xl relative">
-                <div class="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg blur opacity-75 animate-pulse"></div>
-                <div class="relative bg-gray-800 rounded-lg p-6 shadow-xl">
-                    <div class="flex items-center mb-4">
-                        <div class="flex-shrink-0 h-3 w-3 rounded-full bg-red-400 mr-2"></div>
-                        <div class="flex-shrink-0 h-3 w-3 rounded-full bg-yellow-400 mr-2"></div>
-                        <div class="flex-shrink-0 h-3 w-3 rounded-full bg-green-400 mr-2"></div>
-                    </div>
-                    <pre class="text-green-400 overflow-x-auto"><code><span class="text-blue-400">package</span> my.tech.journey;
-                        
-<span class="text-blue-400">public class</span> <span class="text-yellow-300">FirstYearITStudent</span> {
-    
-    <span class="text-blue-400">String</span>[] knownSkills = {<span class="text-yellow-300">"Java Fundamentals"</span>, <span class="text-yellow-300">"SQL Basics"</span>};
-    <span class="text-blue-400">String</span>[] futureSkills = {<span class="text-yellow-300">"Python"</span>, <span class="text-yellow-300">"HTML/CSS/JS"</span>, <span class="text-yellow-300">"..."</span>};
-    
-    <span class="text-blue-400">public static void</span> main(<span class="text-blue-400">String</span>[] args) {
-        System.out.println(<span class="text-yellow-300">"Building my path in Information Technology!"</span>);
-    }
-}</code></pre>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Skills Section -->
-        <section class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-800 bg-opacity-50 backdrop-blur-lg">
-            <div class="max-w-6xl mx-auto">
-                <h2 class="text-3xl sm:text-4xl font-bold text-center mb-16 gradient-text">My Tech Stack</h2>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Current Skills -->
-                    <div class="bg-gray-800 rounded-xl p-6 shadow-lg transform transition-all duration-300 hover:shadow-xl code-card border-t-4 border-blue-500">
-                        <div class="flex items-center mb-4">
-                            <i class="fas fa-check-circle text-blue-400 text-2xl mr-3"></i>
-                            <h3 class="text-xl font-bold">Current Skills</h3>
-                        </div>
-                        <div class="space-y-4">
-                            <div>
-                                <div class="flex justify-between mb-2">
-                                    <span class="font-medium">Java Fundamentals</span>
-                                    <span class="text-blue-300">65%</span>
-                                </div>
-                                <div class="w-full bg-gray-700 rounded-full h-2.5">
-                                    <div class="progress-bar bg-blue-500 h-2.5 rounded-full" style="width: 65%"></div>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="flex justify-between mb-2">
-                                    <span class="font-medium">SQL Basics</span>
-                                    <span class="text-blue-300">60%</span>
-                                </div>
-                                <div class="w-full bg-gray-700 rounded-full h-2.5">
-                                    <div class="progress-bar bg-blue-500 h-2.5 rounded-full" style="width: 60%"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <p class="mt-6 text-gray-300">
-                            Built a strong foundation in programming concepts with Java and database management using SQL queries.
-                        </p>
-                    </div>
-                    
-                    <!-- Future Goals -->
-                    <div class="bg-gray-800 rounded-xl p-6 shadow-lg transform transition-all duration-300 hover:shadow-xl code-card border-t-4 border-purple-500">
-                        <div class="flex items-center mb-4">
-                            <i class="fas fa-lightbulb text-purple-400 text-2xl mr-3"></i>
-                            <h3 class="text-xl font-bold">Future Goals</h3>
-                        </div>
-                        <div class="space-y-4">
-                            <div>
-                                <div class="flex justify-between mb-2">
-                                    <span class="font-medium">Python Programming</span>
-                                    <span class="text-purple-300">Coming Soon!</span>
-                                </div>
-                                <div class="w-full bg-gray-700 rounded-full h-2.5">
-                                    <div class="progress-bar bg-purple-500 h-2.5 rounded-full" style="width: 10%"></div>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="flex justify-between mb-2">
-                                    <span class="font-medium">Web Development</span>
-                                    <span class="text-purple-300">Coming Soon!</span>
-                                </div>
-                                <div class="w-full bg-gray-700 rounded-full h-2.5">
-                                    <div class="progress-bar bg-purple-500 h-2.5 rounded-full" style="width: 5%"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <p class="mt-6 text-gray-300">
-                            Planning to dive into Python for data science and automation, and master web development with HTML, CSS, JavaScript.
-                        </p>
-                    </div>
-                    
-                    <!-- Learning Path -->
-                    <div class="bg-gray-800 rounded-xl p-6 shadow-lg transform transition-all duration-300 hover:shadow-xl code-card border-t-4 border-pink-500">
-                        <div class="flex items-center mb-4">
-                            <i class="fas fa-road text-pink-400 text-2xl mr-3"></i>
-                            <h3 class="text-xl font-bold">Learning Path</h3>
-                        </div>
-                        <div class="space-y-3">
-                            <div class="flex items-center">
-                                <div class="w-6 h-6 rounded-full bg-pink-500 flex items-center justify-center mr-3 flex-shrink-0">
-                                    <i class="fas fa-check text-xs"></i>
-                                </div>
-                                <span>1st Semester - Core Programming</span>
-                            </div>
-                            <div class="flex items-center">
-                                <div class="w-6 h-6 rounded-full bg-pink-500 flex items-center justify-center mr-3 flex-shrink-0">
-                                    <i class="fas fa-check text-xs"></i>
-                                </div>
-                                <span>2nd Semester - Databases</span>
-                            </div>
-                            <div class="flex items-center">
-                                <div class="w-6 h-6 rounded-full bg-blue-500 flex items-center justify-center mr-3 flex-shrink-0">
-                                    <i class="fas fa-arrow-right text-xs"></i>
-                                </div>
-                                <span class="font-medium">Next - Web Technologies</span>
-                            </div>
-                            <div class="flex items-center">
-                                <div class="w-6 h-6 rounded-full bg-gray-600 flex items-center justify-center mr-3 flex-shrink-0">
-                                    <i class="fas fa-lock text-xs"></i>
-                                </div>
-                                <span>Advanced Concepts</span>
-                            </div>
-                        </div>
-                        <p class="mt-6 text-gray-300">
-                            Following a structured curriculum while exploring new technologies to expand my skillset.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Tech Showcase -->
-        <section class="py-20 px-4 sm:px-6 lg:px-8">
-            <div class="max-w-6xl mx-auto">
-                <h2 class="text-3xl sm:text-4xl font-bold text-center mb-16 gradient-text">Technologies I'm Exploring</h2>
-                
-                <div class="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-8">
-                    <div class="flex flex-col items-center tech-icon transition-all duration-300">
-                        <i class="fab fa-java text-6xl text-red-500 mb-3"></i>
-                        <span class="text-lg">Java</span>
-                    </div>
-                    <div class="flex flex-col items-center tech-icon transition-all duration-300">
-                        <i class="fas fa-database text-6xl text-blue-400 mb-3"></i>
-                        <span class="text-lg">SQL</span>
-                    </div>
-                    <div class="flex flex-col items-center tech-icon transition-all duration-300">
-                        <i class="fab fa-python text-6xl text-yellow-400 mb-3"></i>
-                        <span class="text-lg">Python</span>
-                    </div>
-                    <div class="flex flex-col items-center tech-icon transition-all duration-300">
-                        <i class="fab fa-html5 text-6xl text-orange-500 mb-3"></i>
-                        <span class="text-lg">HTML5</span>
-                    </div>
-                    <div class="flex flex-col items-center tech-icon transition-all duration-300">
-                        <i class="fab fa-css3-alt text-6xl text-blue-500 mb-3"></i>
-                        <span class="text-lg">CSS3</span>
-                    </div>
-                    <div class="flex flex-col items-center tech-icon transition-all duration-300">
-                        <i class="fab fa-js text-6xl text-yellow-300 mb-3"></i>
-                        <span class="text-lg">JavaScript</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Motivation Section -->
-        <section class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-900 to-blue-900">
-            <div class="max-w-4xl mx-auto text-center">
-                <i class="fas fa-quote-left text-4xl text-blue-400 opacity-50 mb-6"></i>
-                <h3 class="text-2xl sm:text-3xl font-medium mb-8">
-                    <span class="gradient-text">Every expert was once a beginner.</span> I'm on my journey from typing "Hello World" to building innovative solutions.
-                </h3>
-                <div class="flex items-center justify-center">
-                    <div class="w-16 h-16 rounded-full bg-blue-500 flex items-center justify-center mr-4">
-                        <i class="fas fa-user-graduate text-2xl"></i>
-                    </div>
-                    <div class="text-left">
-                        <h4 class="font-bold">1st Year BSc IT Student</h4>
-                        <p class="text-blue-300">Building foundation for tech career</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
         <!-- Footer -->
-        <footer class="py-12 px-4 sm:px-6 lg:px-8 bg-gray-800 bg-opacity-90">
-            <div class="max-w-6xl mx-auto">
-                <div class="flex flex-col md:flex-row justify-between items-center">
-                    <div class="mb-6 md:mb-0">
-                        <h3 class="text-2xl font-bold gradient-text">Tech Journey</h3>
-                        <p class="text-gray-400 mt-2">Building the future, one line of code at a time</p>
-                    </div>
-                    <div class="flex space-x-6">
-                        <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors text-xl">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-blue-500 transition-colors text-xl">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-pink-500 transition-colors text-xl">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-500">
-                    <p>© 2023 My Tech Journey - BSc IT First Year. All progress proudly displayed.</p>
-                </div>
+        <footer class="text-center text-gray-600 poppins">
+            <p class="mb-4">Made with <span class="text-red-500">❤️</span> by your loving boyfriend</p>
+            <div class="flex justify-center space-x-6 mb-4">
+                <button onclick="playMusic()" class="bg-pink-500 text-white p-3 rounded-full hover:bg-pink-600 transition-all">
+                    <i class="fas fa-music"></i>
+                </button>
+                <button onclick="createConfetti()" class="bg-pink-500 text-white p-3 rounded-full hover:bg-pink-600 transition-all">
+                    <i class="fas fa-gift"></i>
+                </button>
+                <button onclick="showSurprise()" class="bg-pink-500 text-white p-3 rounded-full hover:bg-pink-600 transition-all">
+                    <i class="fas fa-surprise"></i>
+                </button>
             </div>
+            <p>© <span id="year"></span> All my love reserved for you</p>
         </footer>
     </div>
 
     <script>
-        // Animate elements when they come into view
-        document.addEventListener('DOMContentLoaded', function() {
-            // Animate progress bars
-            setTimeout(() => {
-                document.querySelectorAll('.progress-bar').forEach(bar => {
-                    const width = bar.style.width;
-                    bar.style.width = '0';
-                    setTimeout(() => {
-                        bar.style.width = width;
-                    }, 100);
-                });
-            }, 500);
+        // Set current year
+        document.getElementById('year').textContent = new Date().getFullYear();
+        
+        // Countdown timer
+        function updateCountdown() {
+            // Set the date we're counting down to (next 7pm)
+            const now = new Date();
+            let countdownDate = new Date();
             
-            // Add hover effect to tech icons
-            const techIcons = document.querySelectorAll('.tech-icon');
-            techIcons.forEach(icon => {
-                icon.addEventListener('mouseenter', function() {
-                    this.classList.add('scale-110');
-                });
-                icon.addEventListener('mouseleave', function() {
-                    this.classList.remove('scale-110');
-                });
-            });
+            // If today's time is past 7pm, set for tomorrow
+            if (now.getHours() >= 19) {
+                countdownDate.setDate(countdownDate.getDate() + 1);
+            }
             
-            // Animate card hover effect
-            const cards = document.querySelectorAll('.code-card');
-            cards.forEach(card => {
-                card.addEventListener('mouseenter', function() {
-                    this.classList.add('shadow-xl');
-                });
-                card.addEventListener('mouseleave', function() {
-                    this.classList.remove('shadow-xl');
-                });
-            });
+            countdownDate.setHours(19, 0, 0, 0);
             
-            // Display typing animation text
-            const heroText = document.querySelector('h1 span');
-            heroText.style.width = '0';
-            setTimeout(() => {
-                heroText.classList.add('typing-animation');
-            }, 500);
-        });
+            const diff = countdownDate - now;
+            
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+            
+            document.getElementById('days').textContent = days.toString().padStart(2, '0');
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+        }
+        
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+        
+        // Photo changer
+        const photos = [
+            'https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80',
+            'https://images.unsplash.com/photo-1530981785497-681dfc7f9e4c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80',
+            'https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80',
+            'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80'
+        ];
+        
+        let currentPhoto = 0;
+        
+        function changePhoto() {
+            currentPhoto = (currentPhoto + 1) % photos.length;
+            document.getElementById('couplePhoto').src = photos[currentPhoto];
+            createConfetti();
+        }
+        
+        // Music player
+        function playMusic() {
+            const audio = document.getElementById('birthdaySong');
+            if (audio.paused) {
+                audio.play();
+            } else {
+                audio.pause();
+            }
+        }
+        
+        // Confetti effect
+        function createConfetti() {
+            const container = document.getElementById('confetti-container');
+            container.innerHTML = '';
+            
+            const colors = ['#f44336', '#e91e63', '#9c27b0', '#673ab7', '#3f51b5', '#2196f3', '#03a9f4', '#00bcd4', '#009688', '#4CAF50', '#8BC34A', '#CDDC39', '#FFEB3B', '#FFC107', '#FF9800', '#FF5722'];
+            
+            for (let i = 0; i < 100; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.left = Math.random() * 100 + 'vw';
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.opacity = '1';
+                
+                // Random shape
+                if (Math.random() > 0.5) {
+                    confetti.style.borderRadius = '50%';
+                }
+                
+                // Random size
+                const size = Math.random() * 10 + 5;
+                confetti.style.width = size + 'px';
+                confetti.style.height = size + 'px';
+                
+                container.appendChild(confetti);
+                
+                // Animation
+                const animation = confetti.animate([
+                    { transform: 'translateY(0) rotate(0deg)', opacity: 1 },
+                    { transform: `translateY(${window.innerHeight}px) rotate(${Math.random() * 360}deg)`, opacity: 0 }
+                ], {
+                    duration: Math.random() * 3000 + 2000,
+                    easing: 'cubic-bezier(0.1, 0.8, 0.9, 1)'
+                });
+                
+                animation.onfinish = () => confetti.remove();
+            }
+        }
+        
+        // Make a wish
+        function makeWish() {
+            const wish = document.getElementById('wish').value;
+            if (wish.trim() !== '') {
+                alert(`Your wish: "${wish}" has been sent to the birthday universe! ✨`);
+                document.getElementById('wish').value = '';
+                createConfetti();
+            } else {
+                alert('Please make a wish first!');
+            }
+        }
+        
+        // Surprise
+        function showSurprise() {
+            const surpriseMessages = [
+                "You're the most beautiful person I know!",
+                "Your smile makes my day better!",
+                "I fall in love with you more every day!",
+                "You're my favorite thought!",
+                "Life with you is an amazing adventure!",
+                "You're perfect just the way you are!",
+                "I'm so lucky to have you in my life!"
+            ];
+            
+            const randomMessage = surpriseMessages[Math.floor(Math.random() * surpriseMessages.length)];
+            alert(randomMessage + " ❤️");
+            createConfetti();
+        }
+        
+        // Initial confetti on load
+        window.onload = function() {
+            setTimeout(createConfetti, 1000);
+        };
     </script>
 </body>
 </html>
